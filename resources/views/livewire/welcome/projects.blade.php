@@ -9,6 +9,76 @@
     ]);
 @endphp
 
+@php
+$projects = collect([
+    (object)[
+        'title' => 'Mid-tier ERP',
+        'description' => 'Enterprise Inventory and Sales Management System - Project features include Inventory, Sales management, Purchasing, Sales Releasing, Sales Report, Cash Flow.',
+        'technologies' => 'Developed a Mid-tier ERP System using Laravel, Livewire, Alpine JS, Tailwind, PHP MySQL.',
+        'project_type' => 'Client project (Freelance w/ my team)',
+        'url' => 'https://digitalbusinessrun.com/',
+        'image' => asset('image/projects/2.png'),
+    ],
+    (object)[
+        'title' => 'Skool',
+        'description' => 'Ride sharing mobile application for student - This app feature includes Matching and Booking, Real-time Map Tracking, Admin, Real-time Notification, User Profile and Verification.Ride sharing mobile application for student - This app feature includes Matching and Booking, Real-time Map Tracking, Admin, Real-time Notification, User Profile and Verification. Ride sharing mobile application for student - This app feature includes Matching and Booking, Real-time Map Tracking, Admin, Real-time Notification, User Profile and Verification.',
+        'technologies' => 'Developed the main app using React Native Expo JS, React Native Libraries, Google Map Apis, Firebase and developed the web-base admin panel using, React, Express, Node, Nodemailer, MUI, Chart JS,',
+        'project_type' => 'Capstone project',
+        'url' => 'https://expo.dev/artifacts/eas/iPPPuowCi1tGxuffzafpjV.apk',
+        'image' => asset('image/projects/1.png'),
+    ],
+    (object)[
+        'title' => 'Mables POS',
+        'description' => 'Mobile POS designed for Mables Restobar - the app features inclcude Inventory, Sales Order, Table Management.',
+        'technologies' => 'Developed a mobile app using React Native JS, React Native Libraries, Firebase',
+        'project_type' => 'School Project',
+        'url' => '',
+        'image' => asset('image/projects/6.png'),
+    ],
+    (object)[
+        'title' => 'DevTeam HRIS',
+        'description' => 'Human Resource Information System - the feature I developed as one of trainee developer inlcudes Notification Settings and Email Notification for Login and announcement Global Announcement with role-based access control.',
+        'technologies' => 'Developed a Human Resource Information System using Laravel, Livewire, Alpine JS, Tailwind, PHP MySQL.',
+        'project_type' => 'OJT (Intern’s Team Project)',
+        'url' => '',
+        'image' => asset('image/projects/7.png'),
+    ],
+    (object)[
+        'title' => 'ToDo',
+        'description' => 'To do list scheduling mobile app - the app feature Monitor day-to-day task.',
+        'technologies' => 'Developed a mobile app using React Native JS, React Native Libraries, Firebase.',
+        'project_type' => 'School Project',
+        'url' => '',
+        'image' => asset('image/projects/5.png'),
+    ],
+    (object)[
+        'title' => 'Jobilee KM',
+        'description' => 'Jobilee Koisk Machine a Fastfood Ordering System ',
+        'technologies' => 'Developed a simple web-based system using HTML, Bootstrap, JQuery, PHP MySQL.',
+        'project_type' => 'School Project',
+        'url' => '',
+        'image' => asset('image/projects/4.png'),
+    ],
+    (object)[
+        'title' => 'Tenth Ecommerce',
+        'description' => 'Personal project practicing TALL Stack - Project feature inlucdes Inventory, Shop listing and add to cart, User sides admin and user.',
+        'technologies' => 'Developed a ecommerce web-based system using Laravel, Livewire, Alpine JS, Tailwind, PHP MySQL.',
+        'project_type' => 'Personal Project',
+        'url' => '',
+        'image' => asset('image/projects/3.png'),
+    ],
+]);
+$projectsArray = $projects->map(fn ($p) => [
+    'title' => $p->title,
+    'project_type' => $p->project_type,
+    'description' => $p->description,
+    'technologies' => $p->technologies,
+    'url' => $p->url,
+    'image' => $p->image,
+]);
+@endphp
+
+
 <div 
     x-data="{
         projects: @js($projectsArray),
